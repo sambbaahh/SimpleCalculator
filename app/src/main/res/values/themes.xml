@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SimpleCalculator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:background">@color/Background</item>
+        <item name="materialButtonStyle">@style/NumberButtons</item>
+        <!-- Status bar color. -->
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="NumberButtons">
+        <item name="backgroundTint">@color/NumberButtons</item>
+        <item name="android:textSize">55dp</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="FunctionAndOtherButtons">
+        <item name="backgroundTint">@color/FunctionAndOtherButtons</item>
+        <item name="android:textSize">55dp</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="inoutput">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">55dp</item>
+
+
+
+    </style>
+</resources>
