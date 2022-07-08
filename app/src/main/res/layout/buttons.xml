@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -28,7 +29,7 @@
 
 
         <ImageButton
-            android:id="@+id/btnErease"
+            android:id="@+id/btnErase"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -37,7 +38,8 @@
             android:gravity="center"
             android:minHeight="48dp"
             android:src="@drawable/ic_baseline_backspace_24"
-            android:theme="@style/FunctionAndOtherButtons" />
+            android:theme="@style/FunctionAndOtherButtons"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/btnPercentage"
@@ -162,7 +164,7 @@
             android:gravity="center"/>
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/btnTwo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

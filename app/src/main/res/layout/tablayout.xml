@@ -10,21 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabSelectedTextColor="@color/White"
-        app:tabTextColor="@color/White"
         app:tabBackground="@drawable/tab_color_selector"
+        app:tabIndicator="@color/white"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorColor="@null"
+
         >
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:icon="@drawable/ic_baseline_calculate_24"
-            android:text="Calculate"
+            android:text="@string/calculate"
             />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="History" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_baseline_history_24"
+            android:text="@string/history" />
 
     </com.google.android.material.tabs.TabLayout>
 

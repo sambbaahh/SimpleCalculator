@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         tablayout.setupWithViewPager(viewPager);
         Adapter adapter = new Adapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        adapter.addFragment(new Calculator(), "Calculate");
-        adapter.addFragment(new History(), "History");
+        adapter.addFragment(new Calculator(), getResources().getString(R.string.calculate));
+        adapter.addFragment(new History(), getResources().getString(R.string.history));
         viewPager.setAdapter(adapter);
     }
 }

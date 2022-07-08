@@ -4,6 +4,7 @@
         <!-- Primary brand color. -->
         <item name="android:background">@color/Background</item>
         <item name="materialButtonStyle">@style/NumberButtons</item>
+        <item name="tabBackground">@color/FunctionAndOtherButtons</item>
         <!-- Status bar color. -->
         <!-- Customize your theme here. -->
     </style>
