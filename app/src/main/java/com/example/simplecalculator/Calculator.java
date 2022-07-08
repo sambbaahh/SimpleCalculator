@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 public class Calculator extends Fragment implements View.OnClickListener {
     TextView output;
@@ -160,6 +163,12 @@ public class Calculator extends Fragment implements View.OnClickListener {
         }
 
         else if (id == R.id.btnEqual) {
+            Calendar calendar = Calendar.getInstance();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM HH:mm");
+            Equals equals = new Equals(output.getText().toString(), simpleDateFormat.format(calendar.getTime()));
+            System.out.println(equals.operationTime);
+            System.out.println(equals.operation);
+            equals.isEqualTo();
         }
 
         else if (id == R.id.btnSum) {
