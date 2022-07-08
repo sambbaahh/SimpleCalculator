@@ -163,12 +163,19 @@ public class Calculator extends Fragment implements View.OnClickListener {
         }
 
         else if (id == R.id.btnEqual) {
+
             Calendar calendar = Calendar.getInstance();
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM HH:mm");
             Equals equals = new Equals(output.getText().toString(), simpleDateFormat.format(calendar.getTime()));
-            System.out.println(equals.operationTime);
-            System.out.println(equals.operation);
+
             equals.isEqualTo();
+
+            SaveCalculation saveCalculation = new SaveCalculation();
+
+            saveCalculation.InitiateCalculation(equals.operation,equals.result,equals.operationTime);
+
+            output.setText(null);
+            output.setText(equals.result);
         }
 
         else if (id == R.id.btnSum) {
@@ -188,6 +195,7 @@ public class Calculator extends Fragment implements View.OnClickListener {
         }
 
         else if (id == R.id.btnPercentage) {
+
             output.setText(output.getText() + "%");
         }
 
