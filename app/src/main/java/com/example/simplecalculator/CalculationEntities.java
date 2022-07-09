@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class CalculationEntities {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int CalculationID;
 
     @ColumnInfo(name="calculation")

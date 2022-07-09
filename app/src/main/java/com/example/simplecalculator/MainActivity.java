@@ -1,7 +1,6 @@
 package com.example.simplecalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -30,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
 
         tablayout.setupWithViewPager(viewPager);
-        Adapter adapter = new Adapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        adapter.addFragment(new Calculator(), getResources().getString(R.string.calculate));
-        adapter.addFragment(new History(), getResources().getString(R.string.history));
-        viewPager.setAdapter(adapter);
+        FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        fragmentAdapter.addFragment(new Calculator(), getResources().getString(R.string.calculate));
+        fragmentAdapter.addFragment(new History(), getResources().getString(R.string.history));
+        viewPager.setAdapter(fragmentAdapter);
     }
 }

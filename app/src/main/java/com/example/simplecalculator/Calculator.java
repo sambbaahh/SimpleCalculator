@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.room.Room;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,8 @@ import java.util.Calendar;
 
 public class Calculator extends Fragment implements View.OnClickListener {
     TextView output;
+    public static CalculatorDatabase database;
+    public CalculatorDao Dao;
 
     Button zero;
     Button one;
@@ -45,11 +48,19 @@ public class Calculator extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_calculator, container, false);
+
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        output = (TextView) getView().findViewById(R.id.output);
+        database = Room.databaseBuilder(
+                getActivity().getApplicationContext(),
+                CalculatorDatabase.class,
+                "database-name").allowMainThreadQueries().build();
+
+        Dao = (CalculatorDao) database.CalculatorDao();
+
+        output = (TextView) getView().findViewById(R.id.tvOutput);
 
         zero = (Button) getView().findViewById(R.id.btnZero);
         zero.setOnClickListener(this);
@@ -170,9 +181,9 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
             equals.isEqualTo();
 
-            SaveCalculation saveCalculation = new SaveCalculation();
 
-            saveCalculation.InitiateCalculation(equals.operation,equals.result,equals.operationTime);
+            InitiateCalculation(equals.operation,equals.result,equals.operationTime);
+
 
             output.setText(null);
             output.setText(equals.result);
@@ -210,6 +221,14 @@ public class Calculator extends Fragment implements View.OnClickListener {
         else if (id == R.id.btnClear) {
             output.setText(null);
         }
+    }
 
+    protected void InitiateCalculation(String calculation, String result, String operationTime){
+        CalculationEntities saveCalculation = new CalculationEntities();
+        saveCalculation.calculation = calculation;
+        saveCalculation.result = result;
+        saveCalculation.timeStamp = operationTime;
+
+        Dao.insertAll(saveCalculation);
     }
 }

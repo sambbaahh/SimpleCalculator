@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 public class SaveCalculation extends AppCompatActivity {
+    /*
     public static CalculatorDatabase database;
     public CalculatorDao Dao;
 
@@ -18,9 +19,7 @@ public class SaveCalculation extends AppCompatActivity {
                 getApplicationContext(),
                 CalculatorDatabase.class,
                 "database-name").allowMainThreadQueries().build();
-
-
-        CalculatorDao birdDao = (CalculatorDao) database.CalculatorDao();
+        Dao = (CalculatorDao) database.CalculatorDao();
 
 
         super.onCreate(savedInstanceState);
@@ -33,9 +32,12 @@ public class SaveCalculation extends AppCompatActivity {
         saveCalculation.calculation = calculation;
         saveCalculation.result = result;
         saveCalculation.timeStamp = operationTime;
+        //saveCalculation.CalculationID = 1;
 
-        Dao.insertAll(saveCalculation, saveCalculation);
+        Dao.insertAll(saveCalculation);
     }
 
+
+     */
 
 }

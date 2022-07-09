@@ -25,8 +25,21 @@
     <style name="inoutput">
         <item name="android:textColor">@color/White</item>
         <item name="android:textSize">55dp</item>
+    </style>
 
+    <style name="timeStamp">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="backgroundTint">@color/FunctionAndOtherButtons</item>
+    </style>
 
+    <style name="results">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="backgroundTint">@color/FunctionAndOtherButtons</item>
 
     </style>
+
 </resources>
