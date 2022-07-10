@@ -34,8 +34,6 @@ public class Equals extends Activity {
 
         //poista .0 jos ainoastaan se
         //result = result.replace(".0","");
-        System.out.println(result);
-
     }
 
 }

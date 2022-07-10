@@ -3,14 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp">
 
     <TextView
         android:id="@+id/tvOutput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="3+3+5+6"
+        android:hint="@string/Type"
         android:textAlignment="textEnd"
+        android:textColorHint="@color/white"
         style="@style/FunctionAndOtherButtons"
         />
 </LinearLayout>

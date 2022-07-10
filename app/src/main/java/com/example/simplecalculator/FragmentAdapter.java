@@ -33,6 +33,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         fragmentTitle.add(title);
     }
 
+
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {

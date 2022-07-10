@@ -9,57 +9,50 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 
 public class CalculatorListAdapter extends RecyclerView.Adapter<CalculatorListAdapter.ViewHolder> {
 
-    CalculationEntities[] localDataset;
+    public List<CalculationEntities> localDataset;
+    public RecyclerView list;
 
-    public CalculatorListAdapter() {
+    public CalculatorListAdapter(RecyclerView List) {
+        this.list = List;
+        ReloadData();
+
     }
 
-    public CalculatorListAdapter(CalculationEntities[] dataset) {
-        localDataset = dataset;
-
-    }
-
-    /*
-    public void CalculatorList(CalculationEntities[] dataset) {
-        localDataset = null;
-        localDataset = dataset;
+    public void ReloadData(){
+        localDataset = Calculator.database.CalculatorDao().getAllCalculations();
         notifyDataSetChanged();
-
     }
 
-     */
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calculation_history_item, parent, false);
+        View view =
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.calculation_history_item,
+                        parent, false);
         return new ViewHolder(view);
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull CalculatorListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CalculatorListAdapter.ViewHolder holder, int
+            position) {
         holder.itemView.setTag(position);
 
-        holder.tvCalculation.setText(localDataset[position].calculation);
-        holder.tvResult.setText(localDataset[position].result);
-        holder.tvTimeStamp.setText(localDataset[position].timeStamp);
+        holder.tvCalculation.setText(localDataset.get(position).calculation);
+        holder.tvResult.setText(localDataset.get(position).result);
+        holder.tvTimeStamp.setText(localDataset.get(position).timeStamp);
     }
 
-    /*
-    public void Update(){
-
-        notifyDataSetChanged();
-    }
-
-     */
 
     @Override
     public int getItemCount() {
-        return localDataset.length;
+        return localDataset.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

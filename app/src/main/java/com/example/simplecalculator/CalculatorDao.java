@@ -1,9 +1,12 @@
 package com.example.simplecalculator;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+
+import java.util.List;
 
 @Dao
 public interface CalculatorDao {
@@ -15,7 +18,7 @@ public interface CalculatorDao {
         void insertAll(CalculationEntities... calculations);
 
         @Query("SELECT * FROM CalculationEntities")
-        CalculationEntities[] getAllCalculations();
+        List<CalculationEntities> getAllCalculations();
 
         @Query("DELETE FROM CalculationEntities")
         void deleteAll();

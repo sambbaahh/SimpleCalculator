@@ -118,6 +118,7 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
         clear = (Button) getView().findViewById(R.id.btnClear);
         clear.setOnClickListener(this);
+
     }
 
 
@@ -170,7 +171,9 @@ public class Calculator extends Fragment implements View.OnClickListener {
         }
 
         else if (id == R.id.btnDecimal) {
-            output.setText(output.getText() + getResources().getString(R.string.Decimal));
+            if (CheckChar()){
+                output.setText(output.getText() + getResources().getString(R.string.Decimal));
+            }
         }
 
         else if (id == R.id.btnEqual) {
@@ -180,34 +183,40 @@ public class Calculator extends Fragment implements View.OnClickListener {
             Equals equals = new Equals(output.getText().toString(), simpleDateFormat.format(calendar.getTime()));
 
             equals.isEqualTo();
-
-
             InitiateCalculation(equals.operation,equals.result,equals.operationTime);
-
 
             output.setText(null);
             output.setText(equals.result);
         }
 
         else if (id == R.id.btnSum) {
-            output.setText(output.getText() + "+");
+            if (CheckChar()) {
+                output.setText(output.getText() + "+");
+            }
         }
 
         else if (id == R.id.btnDifference) {
-            output.setText(output.getText() + "-");
+            if (CheckChar()) {
+                output.setText(output.getText() + "-");
+            }
         }
 
         else if (id == R.id.btnMultiply) {
-            output.setText(output.getText() + "×");
+            if (CheckChar()) {
+                output.setText(output.getText() + "×");
+            }
         }
 
         else if (id == R.id.btnDivision) {
-            output.setText(output.getText() + "÷");
+            if (CheckChar()) {
+                output.setText(output.getText() + "÷");
+            }
         }
 
         else if (id == R.id.btnPercentage) {
-
-            output.setText(output.getText() + "%");
+            if (CheckChar()) {
+                output.setText(output.getText() + "%");
+            }
         }
 
         else if (id == R.id.btnErase) {
@@ -230,5 +239,17 @@ public class Calculator extends Fragment implements View.OnClickListener {
         saveCalculation.timeStamp = operationTime;
 
         Dao.insertAll(saveCalculation);
+    }
+
+    public boolean CheckChar(){
+        if (output.getText().length() > 0) {
+            char calcalatorLastChar = output.getText().toString().charAt(output.getText().length() - 1);
+            if (calcalatorLastChar != '.' && calcalatorLastChar != '%' && calcalatorLastChar != '+'
+                    && calcalatorLastChar != '-' && calcalatorLastChar != '×' && calcalatorLastChar != '÷') {
+                return true;
+            }
+
+        }
+        return false;
     }
 }

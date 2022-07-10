@@ -10,14 +10,16 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TabLayout tablayout;
     private ViewPager viewPager;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tabLayout = findViewById(R.id.tableLayout);
+        tabLayout.getResources().getColor(R.color.FunctionAndOtherButtons);
         FragmentNavigation();
 
     }
@@ -25,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void FragmentNavigation(){
-        tablayout = findViewById(R.id.tableLayout);
+        tabLayout = findViewById(R.id.tableLayout);
         viewPager = findViewById(R.id.viewPager);
 
-        tablayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
         FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         fragmentAdapter.addFragment(new Calculator(), getResources().getString(R.string.calculate));
         fragmentAdapter.addFragment(new History(), getResources().getString(R.string.history));
