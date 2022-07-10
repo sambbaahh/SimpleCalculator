@@ -184,6 +184,9 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
             equals.isEqualTo();
             InitiateCalculation(equals.operation,equals.result,equals.operationTime);
+            CalculatorListAdapter calculatorListAdapter = new CalculatorListAdapter();
+            calculatorListAdapter.ReloadData();
+
 
             output.setText(null);
             output.setText(equals.result);

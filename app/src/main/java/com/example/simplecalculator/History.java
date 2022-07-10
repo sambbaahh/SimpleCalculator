@@ -29,11 +29,8 @@ public class History extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        CalculatorListAdapter calculatorListAdapter = new CalculatorListAdapter();
         RecyclerView rvHistory = view.findViewById(R.id.rvCalculationHistory);
-        CalculatorListAdapter calculatorListAdapter = new CalculatorListAdapter(rvHistory);
-        calculatorListAdapter.notifyDataSetChanged();
-
-
         rvHistory.setAdapter(calculatorListAdapter);
         rvHistory.setLayoutManager(new LinearLayoutManager(getContext()));
 

@@ -15,17 +15,15 @@ import java.util.List;
 public class CalculatorListAdapter extends RecyclerView.Adapter<CalculatorListAdapter.ViewHolder> {
 
     public List<CalculationEntities> localDataset;
-    public RecyclerView list;
 
-    public CalculatorListAdapter(RecyclerView List) {
-        this.list = List;
+    public CalculatorListAdapter() {
         ReloadData();
 
     }
 
     public void ReloadData(){
         localDataset = Calculator.database.CalculatorDao().getAllCalculations();
-        notifyDataSetChanged();
+        CalculatorListAdapter.this.notifyDataSetChanged();
     }
 
 
