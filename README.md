@@ -1,4 +1,5 @@
 Simple calculator with history page/fragment. 
+JavaDoc comments are in Finnish.
 
 
 ## Calculator: 
