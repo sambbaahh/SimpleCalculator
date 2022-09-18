@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="history" translatable="false">Historia</string>
+    <string name="calculate" translatable="false">Laskin</string>
+    <string name="Type">Kirjoita tähän...</string>
+</resources>

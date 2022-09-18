@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SimpleCalculator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+
+        <item name="materialButtonStyle">@style/NumberButtons</item>
+        <item name="tabBackground">@color/FunctionAndOtherButtons</item>
+        <!-- Status bar color. -->
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="NumberButtons">
+        <item name="backgroundTint">@color/NumberButtons</item>
+        <item name="android:textSize">55dp</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="FunctionAndOtherButtons">
+        <item name="backgroundTint">@color/FunctionAndOtherButtons</item>
+        <item name="android:textSize">55dp</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="inoutput">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">55dp</item>
+    </style>
+
+    <style name="timeStamp">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="backgroundTint">@color/FunctionAndOtherButtons</item>
+    </style>
+
+    <style name="results">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/FunctionAndOtherButtons</item>
+
+    </style>
+
+</resources>
